@@ -14,6 +14,10 @@ let seriesConcluidas = {}; // exercicio.id -> nº de séries já concluídas nes
 let comunicados_cache = [];
 const EMOJIS_CHAT = ["😀", "😂", "😍", "💪", "🔥", "👏", "🎯", "❤️", "😅", "🥳", "👍", "🙌"];
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
+}
+
 const DIAS_SEMANA = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 
 // Mapeamento de qual treino (letra) cai em cada dia da semana, de acordo com o
